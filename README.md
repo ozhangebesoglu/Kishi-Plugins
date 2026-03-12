@@ -15,18 +15,22 @@ For instance, to install the `hello` plugin from this repository:
 plugin install hello
 ```
 
-## How to Create a Plugin
+## How to Create a Plugin (For Developers)
+
 Creating a plugin is extremely easy. Just create a `.py` file containing your command functions, and export them via a `PLUGIN_COMMANDS` dictionary at the bottom.
+
+**CRITICAL RULE:** To make it easy for users, your plugin's filename **MUST exactly match** the command name it exports (e.g., `weather.py` must export `"weather"`).
 
 Example `my_command.py`:
 ```python
-def example_function(args):
+def my_custom_function(args):
     print("This is a custom plugin output!")
     return 0
     
 PLUGIN_COMMANDS = {
-    "my_command": example_function
+    # This key MUST match the file name (my_command.py -> "my_command")
+    "my_command": my_custom_function
 }
 ```
 
-Then you can either upload it here or run `plugin install https://raw.github.../my_command.py`.
+Then you can either upload it to this repository or run `plugin install https://raw.github.../my_command.py`.
