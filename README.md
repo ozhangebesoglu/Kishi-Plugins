@@ -37,6 +37,38 @@ Then you can either upload it to this repository or run `plugin install https://
 
 ---
 
+## What's New in Kishi Shell v2.0.2.4
+
+### `theme` — switch Kishi color theme
+
+Kishi v2.0.2.4 ships a built-in 5-theme system (Monokai default, Dracula,
+One Dark, Solarized Dark, Solarized Light). The `theme` plugin is the user
+interface to pick one — selection is persisted to `~/.config/kishi/theme`
+and applied on next Kishi startup.
+
+```bash
+Kishi$ -> plugin install theme
+
+Kishi$ -> theme
+Kishi Themes
+  - dracula
+  - monokai (active)
+  - one-dark
+  - solarized-dark
+  - solarized-light
+
+Use: theme set NAME (restart Kishi to apply)
+
+Kishi$ -> theme set dracula
+[+] Theme set to: dracula
+    Restart Kishi to apply (themes load at startup).
+```
+
+Requires Kishi Shell **v2.0.2.4+** (the plugin imports `kishi.themes`).
+Older versions: `pip install --upgrade kishi-shell`.
+
+---
+
 ## What's New in Kishi Shell v2.0.2.0
 
 The latest Kishi release ships major upgrades to **Krep AI** — Kishi's
